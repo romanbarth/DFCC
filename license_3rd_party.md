@@ -8,8 +8,8 @@
    Shaban, H.A.; Barth, R.; Bystricky, K. title. Nucleic Acids Research, volume(issue):pages1-pages2, 2018
 
  developed at:  
-       Laboratoire de Biologie Moléculaire Eucaryote (LBME), 
-       Centre de Biologie Intégrative (CBI), CNRS; 
+       Laboratoire de Biologie MolÃ©culaire Eucaryote (LBME), 
+       Centre de Biologie IntÃ©grative (CBI), CNRS; 
        University of Toulouse, UPS; 31062 
        Toulouse; France
 
