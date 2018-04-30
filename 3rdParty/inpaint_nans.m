@@ -2,7 +2,9 @@ function B=inpaint_nans(A,method)
 % This section includes third-party license information for certain third-party 
 % functions included with the DFCC approach published in 
 % 
-% Shaban, H.A.; Barth, R.; Bystricky, K. title. Nucleic Acids Research, volume(issue):pages1-pages2, 2018
+%   Haitham A Shaban, Roman Barth, Kerstin Bystricky; Formation of correlated 
+%   chromatin domains at nanoscale dynamic resolution during transcription, 
+%   Nucleic Acids Research, gky269, https://doi.org/10.1093/nar/gky269
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
