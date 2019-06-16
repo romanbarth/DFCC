@@ -3,11 +3,9 @@
 % ----------------------------------------------------------------------- %
 %
 % Reference to the publication:
-%   Haitham A Shaban, Roman Barth, Kerstin Bystricky; Formation of correlated 
-%   chromatin domains at nanoscale dynamic resolution during transcription, 
-%   Nucleic Acids Research, gky269, https://doi.org/10.1093/nar/gky269
+%   Shaban, H.A.; Barth, R.; Bystricky, K. title. Nucleic Acids Research, volume(issue):pages1-pages2, 2018
 %
-% Demo for example data (U2OS cells expressing H2B-GFP of size 348 pixels 
+% Demo for example data (U2OS cells expressing H2B-GFP of size 348 pixels
 % x 338 pixels x 50 frames)
 % The data is a part of the entire dataset of size 1024 pixels x 1024
 % pixels x 150 frames (88 nm pixel size and 200 ms per frame), the same as
@@ -17,10 +15,10 @@
 %       Intel(R) Core(TM) i7-6700IQ CPU @ 2.60 GHz 2.60 Ghz
 %       16.0 Gb RAM
 %
-% developed at:  
-%       Laboratoire de Biologie MolÃ©culaire Eucaryote (LBME), 
-%       Centre de Biologie IntÃ©grative (CBI), CNRS; 
-%       University of Toulouse, UPS; 31062 
+% developed at:
+%       Laboratoire de Biologie Moléculaire Eucaryote (LBME),
+%       Centre de Biologie Intégrative (CBI), CNRS;
+%       University of Toulouse, UPS; 31062
 %       Toulouse; France
 %
 % ----------------------------------------------------------------------- %
@@ -30,7 +28,12 @@ clearvars
 
 %% Set parameters
 % give the path to the file to analyse
-directory = [pwd '\U2OS_H2BGFP_example_data.tif'];
+filepath = pwd;
+if ispc
+    directory = [filepath '\U2OS_H2BGFP_example_data.tif'];
+else
+    directory = [filepath '/U2OS_H2BGFP_example_data.tif'];
+end
 
 % pixel size in micrometer
 pixelsize= 0.088;
@@ -74,6 +77,14 @@ disp('Integration...')
 % fit spatial autocorrelation
 [xi, nu]         = AutocorrelationFit(lags, R);
 [xi_mag, nu_mag] = AutocorrelationFit(lags, R_mag);
+
+
+%% save data
+if ispc
+    save([filepath '\DFCC_analysis_' convertDate(datee) '.mat'])
+else
+    save([filepath '/DFCC_analysis_' convertDate(datee) '.mat'])
+end
 
 %% plot resulting parameters with standard deviation
 f = PlotParameters(xi, nu, xi_mag, nu_mag, dT);
