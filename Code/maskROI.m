@@ -2,15 +2,12 @@
 % Dense Flow reConstruction and Correlation (DFCC)
 % ----------------------------------------------------------------------- %
 %
-% 
 % Reference to the publication:
-%   Haitham A Shaban, Roman Barth, Kerstin Bystricky; Formation of correlated 
-%   chromatin domains at nanoscale dynamic resolution during transcription, 
-%   Nucleic Acids Research, gky269, https://doi.org/10.1093/nar/gky269
+%   Shaban, H.A.; Barth, R.; Bystricky, K. title. Nucleic Acids Research, volume(issue):pages1-pages2, 2018
 %
 % developed at:  
-%       Laboratoire de Biologie MolÃ©culaire Eucaryote (LBME), 
-%       Centre de Biologie IntÃ©grative (CBI), CNRS; 
+%       Laboratoire de Biologie Moléculaire Eucaryote (LBME), 
+%       Centre de Biologie Intégrative (CBI), CNRS; 
 %       University of Toulouse, UPS; 31062 
 %       Toulouse; France
 %
@@ -60,7 +57,7 @@ while ~done
     imagesc(im), colormap gray, hold on
     title('Segmented nuclei. Choose by clicking.')
     disp('> Segmented nuclei. Choose by clicking.')
-    disp('> Click outside segmentation to mask manually.')
+    disp('> Alternatively, click outside segmentation to mask manually.')
     for k = 1:length(bound)
         plot(bound{k}(:,2), bound{k}(:,1), 'g')
     end
@@ -87,10 +84,10 @@ while ~done
             end
         end
         if found == 0
-            title('> Mark your nucleus manually.')
+            title('> Mask your nucleus manually.')
             disp('> Mark your polygon points with the left mouse button. ')
             disp('> Double-click in the nucleus when finished.')
-            [mask.msk, mask.idx, mask.idy] = roipoly(im);
+            [mask.msk, mask.idx, mask.idy] = roipoly(scale_image(im, 0, 1));
             % After masking, return to old plot
             imagesc(im), colormap gray, hold on
             title('Segmented nuclei.')
