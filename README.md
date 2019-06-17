@@ -1,4 +1,4 @@
-# DFCC
+﻿# DFCC
  Dense Flow reConstruction and Correlation (DFCC)
  ----------------------------------------------------------------------- 
 
@@ -19,8 +19,9 @@ tested under MATLAB version 7.5 (R2017b).
 
 Required toolboxes:
 - Image Processing Toolbox
-- Signal Processing Toolbox
-- Statistics and Machine Learning Toolbox
+- (optional) Optimization Toolbox
+
+The script can be executed without the optimization toolbox. However, please be aware that uncertainties of fit parameters cannot be computed and are returned as NaN by the function 'AutocorrelationFit.m'.
 
 Execute the file DFCC.m to process an example of a U2OS nucleus expressing H2B-GFP. 
 The processed file can be easily changed by setting the appropriate directory (full 

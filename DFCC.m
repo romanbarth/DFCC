@@ -26,7 +26,9 @@
 close all
 clearvars
 
-%% Set parameters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                             USER INPUT                                  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % give the path to the file to analyse
 filepath = pwd;
 if ispc
@@ -42,7 +44,7 @@ pixelsize= 0.088;
 dT = 0.2;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                             USER INPUT                                  %
+%                            START SCRIPT                                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Search path
 initialize % add all required paths to the Matlab path
@@ -54,10 +56,6 @@ datee(datee==':') = '-';
 
 %% load images, set mask and filter noise (blurring)
 [im, numIm, mask, mask_nuc] = Preprocessing(directory);
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                            START SCRIPT                                 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 disp('Starting calculations...')
 
 %% calculate velocity field
@@ -90,7 +88,7 @@ end
 f = PlotParameters(xi, nu, xi_mag, nu_mag, dT);
 
 cend = datestr(now);
-disp('Analysis finished!')
+disp('DFCC analysis finished!')
 disp(['Started:  ' cstart])
 disp(['Finished: ' cend])
 % ----------------------------------------------------------------------- %
