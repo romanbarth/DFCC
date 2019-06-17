@@ -40,6 +40,7 @@ function [im, numIm, mask, mask_nuc] = Preprocessing(directory)
 % load images
 disp('Reading in...')
 im = loadimages(directory);
+im = im(1:5);
 numIm = length(im);
 
 % convert images to uint8 (scale between 0 and 255)

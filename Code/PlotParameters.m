@@ -43,12 +43,14 @@ linecolor = ['r', 'g'];
 timelag = (1:size(xi_dir,1))*dT;
 
 % create figures with 2 subplots
-f = figure('unit', 'normalized', 'position', [0.01 0.4 0.5 0.5]); hold on
+f = figure('unit', 'normalized', 'position', [0.01 0.4 0.7 0.4]); hold on
+set(f, 'Color', 'w')
 
 % correlation length
 subplot(1,2,1), hold on
 h(1) = errorbar(timelag, xi_dir(:,1), xi_dir(:,2));
 h(2) = errorbar(timelag, xi_mag(:,1), xi_mag(:,2));
+set(gca, 'FontName', 'Arial', 'FontSize', 18)
 
 for ih = 1:length(h)
     set(h(ih), 'color', linecolor(ih), 'linewidth', linewidth)
@@ -61,6 +63,7 @@ ylabel('Correlation length \xi [\mum]')
 subplot(1,2,2), hold on
 h(1) = errorbar(timelag, nu_dir(:,1), nu_dir(:,2));
 h(2) = errorbar(timelag, nu_mag(:,1), nu_mag(:,2));
+set(gca, 'FontName', 'Arial', 'FontSize', 18)
 
 for ih = 1:length(h)
     set(h(ih), 'color', linecolor(ih), 'linewidth', linewidth)
